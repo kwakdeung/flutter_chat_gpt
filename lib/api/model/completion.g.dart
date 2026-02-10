@@ -15,7 +15,10 @@ CompletionRequest _$CompletionRequestFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$CompletionRequestToJson(CompletionRequest instance) =>
-    <String, dynamic>{'model': instance.model, 'messages': instance.messages};
+    <String, dynamic>{
+      'model': instance.model,
+      'messages': instance.messages,
+    };
 
 CompletionResponse _$CompletionResponseFromJson(Map<String, dynamic> json) =>
     CompletionResponse(
@@ -32,15 +35,23 @@ Map<String, dynamic> _$CompletionResponseToJson(CompletionResponse instance) =>
     };
 
 ChoiceModel _$ChoiceModelFromJson(Map<String, dynamic> json) => ChoiceModel(
-  (json['index'] as num).toInt(),
-  MessageModel.fromJson(json['message'] as Map<String, dynamic>),
-);
+      (json['index'] as num).toInt(),
+      MessageModel.fromJson(json['message'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$ChoiceModelToJson(ChoiceModel instance) =>
-    <String, dynamic>{'index': instance.index, 'message': instance.message};
+    <String, dynamic>{
+      'index': instance.index,
+      'message': instance.message,
+    };
 
-MessageModel _$MessageModelFromJson(Map<String, dynamic> json) =>
-    MessageModel(json['role'] as String, json['content'] as String);
+MessageModel _$MessageModelFromJson(Map<String, dynamic> json) => MessageModel(
+      json['role'] as String,
+      json['content'] as String,
+    );
 
 Map<String, dynamic> _$MessageModelToJson(MessageModel instance) =>
-    <String, dynamic>{'role': instance.role, 'content': instance.content};
+    <String, dynamic>{
+      'role': instance.role,
+      'content': instance.content,
+    };

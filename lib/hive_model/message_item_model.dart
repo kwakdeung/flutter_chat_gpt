@@ -1,0 +1,17 @@
+import 'package:hive_ce_flutter/hive_flutter.dart';
+
+import '/hive_model/message_role_model.dart';
+
+part 'message_item_model.g.dart';
+
+@HiveType(typeId: 1)
+class MessageItemModel {
+  @HiveField(0)
+  final String message;
+  @HiveField(1)
+  final MessageRoleModel role;
+  @HiveField(2)
+  final DateTime createdAt;
+
+  MessageItemModel(this.message, this.role, this.createdAt);
+}
